@@ -8,15 +8,15 @@ public class InDanger {
 		final InputStreamReader ir = new InputStreamReader(System.in);
 		final BufferedReader in = new BufferedReader(ir);
 
-		Double numberOfRebels = 0.1;
+		Double numberOfRebels = Double.parseDouble(in.readLine());
 
-		while (!numberOfRebels.equals(00e0)) {
-			numberOfRebels = Double.parseDouble(in.readLine());
-			if (numberOfRebels.equals(0.0)) {
-				break;
+		if (!numberOfRebels.equals(0.0)) {
+			while (!numberOfRebels.equals(0.0)) {
+				System.out.println(getSafeSpot(numberOfRebels.intValue()));
+				numberOfRebels = Double.parseDouble(in.readLine());
 			}
-			System.out.println(getSafeSpot(numberOfRebels.intValue()));
 		}
+
 	}
 
 	public static int getSafeSpot(final int numberOfRebels) {
