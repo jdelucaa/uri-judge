@@ -10,18 +10,14 @@ public class InDanger {
 
 		Double numberOfRebels = Double.parseDouble(in.readLine());
 
-		if (!numberOfRebels.equals(0.0)) {
-			while (!numberOfRebels.equals(0.0)) {
-				System.out.println(getSafeSpot(numberOfRebels.intValue()));
-				numberOfRebels = Double.parseDouble(in.readLine());
-			}
+		while (!numberOfRebels.equals(0.0)) {
+			System.out.println(getSafeSpot(numberOfRebels.intValue()));
+			numberOfRebels = Double.parseDouble(in.readLine());
 		}
-
 	}
 
 	public static int getSafeSpot(final int numberOfRebels) {
 		final int highestOneBit = numberOfRebels - Integer.highestOneBit(numberOfRebels);
 		return 2 * highestOneBit + 1;
 	}
-
 }
